@@ -68,22 +68,35 @@ header {
     position: sticky;
     top: 0;
     z-index: 100;
+    /* FLEXBOX MAGIC */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+
 }
  
 header h1 {
     font-family: 'Playfair Display', Georgia, serif;
     font-size: 2rem;
-    margin-bottom: var(--space-sm);
+    margin-bottom: 0;
 }
  
 /* Navigation links */
+nav {
+    display: flex;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+}
+
 nav a {
     color: var(--white);
     text-decoration: none;
     padding: var(--space-xs) var(--space-sm);
     margin-right: var(--space-sm);
     border-radius: 4px;
-    transition: background-color 0.3s, color 0.3s;
+    transition: all 0.3s;
 }
  
 nav a:hover {
@@ -95,7 +108,7 @@ nav a:hover {
    HERO SECTION
    =========================== */
 .hero {
-    background: linear-gradient(135deg, #5B3A29 0%, #8B5E3C 100%);
+    background: linear-gradient(135deg,  #6A1B9A 0%, #AB47BC 100%);
     color: var(--white);
     text-align: center;
     padding: var(--space-xl) var(--space-md);
@@ -149,6 +162,18 @@ nav a:hover {
     text-align: center;
     margin-bottom: var(--space-lg);
 }
+/* MAKE FEATURED INTO A FLEXBOX CONTAINER */
+
+
+.book-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-lg);
+    margin-top: var(--space-lg);
+}
+
+
  
 .book-card {
     background: var(--white);
@@ -157,7 +182,9 @@ nav a:hover {
     box-shadow: var(--shadow-sm);
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
-    margin-bottom: var(--space-md);
+    
+    flex:1 1 250px;
+    max-width: 280px;
 }
  
 .book-card:hover {
@@ -207,29 +234,91 @@ nav a:hover {
 }
 
 
+.categories {
+    background-color: var(--light-gray);
+    padding: var(--space-xl) var(--space-md);
+}
+
+.categories h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2.5rem;
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: var(--space-lg);
+}
+
+.category-list-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-md);
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.category {
+    background: var(--white);
+    padding: var(--space-lg);
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    flex: 1 1 200px;
+    max-width: 240px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.category:hover {
+    background-color: var(--accent);
+    color: var(--primary);
+    transform: scale(1.05);
+}
+
+
 /* ===========================
    FOOTER
    =========================== */
-footer {
-    background-color: var(--primary);
-    color: var(--white);
-    text-align: center;
-    padding: var(--space-lg) var(--space-md);
-    margin-top: var(--space-xl);
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-lg);
+    max-width: var(--max-width);
+    margin: 0 auto;
 }
- 
-footer p {
+
+.footer-column {
+    flex: 1 1 200px;
+}
+
+.footer-column h4 {
+    font-family: 'Playfair Display', Georgia, serif;
+    margin-bottom: var(--space-md);
+    color: var(--accent);
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column li {
     margin-bottom: var(--space-xs);
 }
- 
-footer a {
-    color: var(--accent);
+
+.footer-column a {
+    color: var(--white);
     text-decoration: none;
-    margin: 0 var(--space-xs);
+    transition: color 0.3s;
 }
- 
-footer a:hover {
-    text-decoration: underline;
+
+.footer-column a:hover {
+    color: var(--accent);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: var(--space-lg);
+    margin-top: var(--space-lg);
+    border-top: 1px solid rgba(255,255,255,0.2);
 }
 
 
