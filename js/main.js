@@ -10,20 +10,15 @@ const SITE_NAME = "BookHive";
 const FOUNDED_YEAR = 2026;
 const PI = 3.14159;
 
-let cartCount = 0;
+
 let totalAmount = 0;
 let currentUser = null;
 
 console.log(SITE_NAME);
 console.log("Founded:", FOUNDED_YEAR);
-console.log("Cart count:", cartCount);
+
 
 // Change let variables
-cartCount = 3;
-totalAmount = 1497;
-
-console.log("New cart count:", cartCount);
-console.log("Total amount: ₹" + totalAmount);
 
 
 // ====================
@@ -173,22 +168,11 @@ console.log(
 // ====================
 // CART COUNT
 // ====================
+// ====================
+// CART COUNT
+// ====================
 
-function updateCartCount() {
 
-    const cartCountElement =
-        document.getElementById("cart-count");
-
-    if (cartCountElement) {
-        cartCountElement.textContent = cartCount;
-    }
-}
-
-updateCartCount();
-
-console.log("FINAL CART COUNT:", cartCount);
-
-console.log("JS FILE IS RUNNING");
 
 
 
@@ -237,10 +221,38 @@ function renderBooks(bookList) {
     booksContainer.innerHTML = allHTML;
 }
  
-// Render all books when page loads
+
+// ====================
+// ATTACH ADD TO CART EVENTS
+// ====================
+
+function attachAddToCartListeners() {
+
+    const buttons = document.querySelectorAll(".add-to-cart");
+
+    console.log("🟢 BUTTONS FOUND:", buttons.length);
+
+    buttons.forEach(button => {
+
+        button.addEventListener("click", function () {
+
+            const bookId = parseInt(this.dataset.id);
+
+            console.log("🔥 BUTTON CLICKED");
+            console.log("📚 BOOK ID:", bookId);
+
+            addToCart(bookId);
+
+        });
+
+    });
+}
+// Render books first, then attach click events
 if (typeof books !== "undefined") {
     renderBooks(books);
+    attachAddToCartListeners();
 }
+
 
 // ====================
 // ARRAY METHODS
