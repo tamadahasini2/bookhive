@@ -30,6 +30,13 @@ function renderCart() {
         `;
 
         cartTotalElement.textContent = "₹0";
+        const subtotalElement = document.getElementById("summary-subtotal");
+const taxElement = document.getElementById("summary-tax");
+const grandTotalElement = document.getElementById("summary-grand-total");
+
+if (subtotalElement) subtotalElement.textContent = "₹0";
+if (taxElement) taxElement.textContent = "₹0";
+if (grandTotalElement) grandTotalElement.textContent = "₹0";
 
         return;
     }
@@ -96,6 +103,24 @@ function renderCart() {
     );
 
     cartTotalElement.textContent = `₹${total}`;
+    const subtotalElement = document.getElementById("summary-subtotal");
+const taxElement = document.getElementById("summary-tax");
+const grandTotalElement = document.getElementById("summary-grand-total");
+
+const tax = total * 0.05;
+const grandTotal = total + tax;
+
+if (subtotalElement) {
+    subtotalElement.textContent = `₹${total.toFixed(2)}`;
+}
+
+if (taxElement) {
+    taxElement.textContent = `₹${tax.toFixed(2)}`;
+}
+
+if (grandTotalElement) {
+    grandTotalElement.textContent = `₹${grandTotal.toFixed(2)}`;
+}
 
 
     // Attach events

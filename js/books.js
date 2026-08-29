@@ -13,7 +13,7 @@ const books = [
         originalPrice: 499,
         rating: 4.8,
         reviews: 2341,
-        image: "images/the.wings of fire.jpg",
+        image: "images/Wings-of-fire.jpg",
         description: "Autobiography of India's beloved former president.",
         inStock: true
     },

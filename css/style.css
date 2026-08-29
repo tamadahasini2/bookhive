@@ -56,7 +56,7 @@ header {
 
 
 
-CSS
+
 /* ===========================
    HEADER
    =========================== */
@@ -305,7 +305,7 @@ nav a:hover {
 }
 
 .footer-column a {
-    color: var(--white);
+    color: var(--text-dark);
     text-decoration: none;
     transition: color 0.3s;
 }
@@ -390,7 +390,7 @@ nav a:hover {
 /* =========================
    CART NOTIFICATION
    ========================= */
-CSS
+
 /* Notification toast */
 .notification {
     position: fixed;

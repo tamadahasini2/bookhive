@@ -347,3 +347,17 @@ const allWellRated = books.every(
     book => book.rating > 4
 );
 console.log("All books rated above 4:", allWellRated);
+
+function showLoader() {
+    const container = document.getElementById("books-container");
+    if (container) {
+        container.innerHTML = '<div class="spinner"></div>';
+    }
+}
+ 
+// Simulate loading delay (just for visual effect)
+showLoader();
+setTimeout(() => {
+    renderBooks(books);
+    attachAddToCartListeners();
+}, 500);
